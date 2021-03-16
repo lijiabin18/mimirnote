@@ -33,7 +33,7 @@
 | discount_start_time | datetime     | <++>                               |
 | discount_end_time   | datetime     | <++>                               |
 
-- customized_gift，与 roomid 绑定
+- customized_gift，与 room_id 绑定，一个礼物可以对应多个 room
 
 | Field   | Type       | Desc |
 | ------- | ---------- | ---- |
@@ -74,3 +74,10 @@
 | discount_end_time   | datetime    | <++> |
 | create_time         | datetime    | <++> |
 | update_time         | datetime    | <++> |
+
+> Tips
+
+- gift 与 tag、room、country 关系
+  - `tag 与 gift 间的关系` ，1 对 1
+  - `gift 与 room 间的关系` ， 1 对 n
+  - `gift 和 tag 与 country 间的关系` 1 对 n
