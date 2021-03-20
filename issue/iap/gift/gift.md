@@ -27,3 +27,16 @@
 - [礼物 id 查找](https://github.com/tmrwh/NewsDog/wiki/iap-op-%E5%90%8E%E5%8F%B0-api#%E5%8D%95%E4%B8%AA%E7%A4%BC%E7%89%A9%E8%AF%A6%E6%83%85) GET /v1/op/gifts/{id}
 
   - area 中的参数，other → default
+
+#### 礼物大区补充
+
+1. 创建礼物，单大区变多大区。area → []area
+2. 编辑礼物，同时支持多大区编辑。id → []area
+3. 查找礼物，返回多大区信息。
+
+> 待改善
+
+- h.control.UpdateCustomizedGift(giftId, p.RoomIDs,
+  appName)，自定义礼物更新操作是否需要根据大区来
+
+-
