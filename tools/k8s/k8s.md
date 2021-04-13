@@ -1,7 +1,19 @@
 #### 单集群架构
 
-- `kube-api-server` : `k8s 请求入口服务` ，对外提供`系统调用` ,k8s 资源调用
-- `Scheduler` ：`k8s 所有 work node 的监控器`，当用户部署服务时，Scheduler 选择合适的`work node 来部署`
+- master 核心组件(Kubernetes Control Plane)
+
+  - `kube-api-server` : `k8s 请求入口服务` ，对外提供`系统调用` ,k8s 资源调用
+  - `Scheduler` ：`k8s 所有 work node 的监控器`，当用户部署服务时，Scheduler 选择合适的`work node 来部署`
+  - `etcd` : k8s 存储单元，只有**kubu-api-server** 会直接和 etcd 打交道。
+  - `kube-controller manager` ：管理所有资源
+
+- Kubenetes Nodes
+  - kubectl: 通过监听 kube-api-server 来`创建/删除` 对应的 pod
+  - kube-proxy: 根据 kubectl 创建/删除 的 pod
+    来 创建(计算)当前节点上的网络路由规则，从而实现 pod 或 service 的网络
+    流量流转规则
+  - 容器引擎：docker 或 contained 等引擎，这些引擎是与 k8s
+    解耦的，k8s 通过 cri 接口 和运营时的引擎打交道
 
 #### k8s 架构 与 linux
 

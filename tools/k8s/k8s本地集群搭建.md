@@ -1,3 +1,7 @@
+### [推荐教程](https://kuboard.cn/install/install-k8s.html)
+
+<++>
+
 ### docker 安装
 
 1. 更换国内软件源，推荐中国科技大学的源，稳定速度快（可选）
@@ -139,7 +143,8 @@ Environment="HTTPS_PROXY=http://127.0.0.1:8889/" "NO_PROXY=localhost,127.0.0.1,r
    - 这个时候 coredns 的 pending 状态解除
 
 ```
-sudo kubectl apply -f https://docs.projectcalico.org/v3.11/manifests/calico.yaml
+kubectl apply -f https://docs.projectcalico.org/v3.11/manifests/calico.yaml
+
 
 ```
 
@@ -165,4 +170,29 @@ kubeadm join 192.168.0.102:6443 --token ls3teb.3go4xl5v16o0st4h \
 - kubectl apply -f test-pod.yaml //应用信息 kind name command
 - kubectl get pod //获取 pod 镜像
 - kubectl logs <name> //查看镜像部署情况
-- kubectl top nodes //查看内存或 cpu 使用量，通过 metrics-server 查看
+
+8. 常用命令
+
+| 命令                                                               | 细节                                         |
+| ------------------------------------------------------------------ | -------------------------------------------- |
+| kubectl get pod -A                                                 | 获取全部节点(name,ready,status,restarts,age) |
+| kubectl apply -f xxx.yaml                                          | 部署镜像                                     |
+| kubectl get pod                                                    | 查看镜像状态                                 |
+| kubectl logs xxx                                                   | 查看镜像输出日志                             |
+| kubectl top nodes                                                  | 某个 pod 内存与 cpu 使用情况                 |
+| kubeadm config view                                                | 查看 k8s 配置                                |
+| kubectl describe deployment calico-kube-controllers -n kube-system | 查看部署镜像的在 namespace 的信息            |
+| watch kubectl get pod -n kube-system -o wide                       | 查看所有容器组处于的状态                     |
+| kubectl get nodes -o wide                                          | 查看 master 节点初始化结果                   |
+| <++>                                                               | <++>                                         |
+
+- 查看内存与 cpu 需要安装 metrics-server
+  - 下载包，`cd metrics-server-0.3.6 ` <++>
+
+```
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+
+<++>
+```
+
+<++>
