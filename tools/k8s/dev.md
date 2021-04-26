@@ -21,3 +21,10 @@
 
 - chatroom-reward-rocket
   kubectl set image deployments/chatroom-reward-rocket server=492666533052.dkr.ecr.ap-south-1.amazonaws.com/chatroom:git50590d0b7738ebc02d8c868150cee37a80a89166 -n default --record
+
+- noti-op-http
+  kubectl describe deployments/notification-op-http-server -n common
+  kubectl set image deployments/notification-op-http-server server=492666533052.dkr.ecr.ap-south-1.amazonaws.com/notification:gitba6690cf2110ff8f6807615666bfe677c0719078 -n common --record
+  492666533052.dkr.ecr.ap-south-1.amazonaws.com/notification:gitd8bf4879a228de8ed4676ffa9b50752c5fd8a14a
+
+- 回滚
