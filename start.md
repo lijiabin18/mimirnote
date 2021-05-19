@@ -11,18 +11,18 @@
 
 #### 常用库地址
 
-| 服务                 | 命令                                                                                                | 备注 |
-| -------------------- | --------------------------------------------------------------------------------------------------- | ---- |
-| user_center 测试库   | mysql -uuser_center -pmrcd@123 user_center                                                          | <++> |
-| iap 测试库           | mysql -uiap -pmrcd12345                                                                             | <++> |
-| mongo 测试库         | mongo 172.31.20.188                                                                                 | <++> |
-| redis 测试库         | redis-cli                                                                                           | <++> |
-| user_center 线上读库 | mysql -umaster -pmrcd12345 -h userdb-cluster-1.cluster-ro-culfyfk0zivg.ap-south-1.rds.amazonaws.com | <++> |
-| iap 线上库           | mysql -umaster -pmrcd12346 -h zhifu-dashang.cluster-ro-culfyfk0zivg.ap-south-1.rds.amazonaws.com    | <++> |
-| mongo 线上库         | mongo 172.31.23.65:27017 && db.getMongo().setSlaveOk()                                              | <++> |
-| redis_push_ro_addr   | redis-cli -h push-redis-ro.swlldj.ng.0001.aps1.cache.amazonaws.com -p 6379                          | <++> |
-| redis_togo_ro_addr   | redis-cli -h togo-redis-ro.swlldj.ng.0001.aps1.cache.amazonaws.com -p 6379                          | <++> |
-| redis_user_ro_addr   | redis-cli -h togo-redis-1-ro.swlldj.ng.0001.aps1.cache.amazonaws.com -p 6379                        | <++> |
+| 服务                 | 命令                                                                                                |
+| -------------------- | --------------------------------------------------------------------------------------------------- |
+| user_center 测试库   | mysql -uuser_center -pmrcd@123 user_center                                                          |
+| iap 测试库           | mysql -uiap -pmrcd12345                                                                             |
+| mongo 测试库         | mongo 172.31.20.188                                                                                 |
+| redis 测试库         | redis-cli                                                                                           |
+| user_center 线上读库 | mysql -umaster -pmrcd12345 -h userdb-cluster-1.cluster-ro-culfyfk0zivg.ap-south-1.rds.amazonaws.com |
+| iap 线上库           | mysql -umaster -pmrcd12346 -h zhifu-dashang.cluster-ro-culfyfk0zivg.ap-south-1.rds.amazonaws.com    |
+| mongo 线上库         | mongo 172.31.23.65:27017 && db.getMongo().setSlaveOk()                                              |
+| redis_push_ro_addr   | redis-cli -h push-redis-ro.swlldj.ng.0001.aps1.cache.amazonaws.com -p 6379                          |
+| redis_togo_ro_addr   | redis-cli -h togo-redis-ro.swlldj.ng.0001.aps1.cache.amazonaws.com -p 6379                          |
+| redis_user_ro_addr   | redis-cli -h togo-redis-1-ro.swlldj.ng.0001.aps1.cache.amazonaws.com -p 6379                        |
 
 #### 服务相关
 
